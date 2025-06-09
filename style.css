@@ -1,0 +1,100 @@
+body {
+  font-family: "Arial", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #f5deb3;
+  color: #333;
+}
+
+h1 {
+  color: #34495e;
+  margin-bottom: 40px;
+}
+/*===============================================================
+
+Image Carousel
+
+===============================================================*/
+.carousel-container {
+  position: relative;
+  width: 800px; /* カルーセルの幅 */
+  height: 400px; /* カルーセルの高さ */
+  overflow: hidden; /* スライドがはみ出さないように */
+  border-radius: 10px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  margin-bottom: 30px;
+}
+
+.carousel-slides {
+  display: flex; /* 画像を横一列に並べる */
+  width: 100%; /* 各スライドは100%幅を持つ */
+  height: 100%;
+  transition: transform 0.5s ease-in-out; /* スライドのアニメーション */
+}
+
+.carousel-slides img {
+  min-width: 100%; /* 各画像をコンテナの幅に合わせる */
+  height: 100%;
+  object-fit: cover; /* 画像がコンテナに収まるように調整 */
+}
+
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 15px;
+  font-size: 1.5em;
+  cursor: pointer;
+  border-radius: 50%; /* 丸いボタン */
+  width: 50px; /* ボタンのサイズ */
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease;
+  z-index: 5; /* 画像より手前に表示 */
+}
+
+.carousel-button:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.prev-button {
+  left: 15px;
+}
+
+.next-button {
+  right: 15px;
+}
+
+.carousel-dots {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px; /* ドット間の隙間 */
+  z-index: 5;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.dot.active {
+  background-color: white;
+  transform: scale(1.2); /* アクティブなドットを少し大きく */
+}
